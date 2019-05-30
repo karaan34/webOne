@@ -1,0 +1,164 @@
+
+.card-div {
+    margin: 6px 4px 6px 4px;
+    height: 240px;
+    width: 169px;
+    display: -webkit-inline-box;
+    position: relative;
+}
+
+.card-img {
+    height: 240px;
+    width: 169px;
+}
+
+.card-img.selected{
+    border: 4px solid rgb(42,255,0);
+}
+
+.recurring-event {
+    position: absolute;
+    left: 13px;
+    top: 29px;
+}
+
+.event-entered {
+    position: absolute;
+    right: 13px;
+    top: 29px;
+}
+
+.player-count {
+    position: absolute;
+    left: 13px;
+    top: 57px;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.start-time {
+    position: absolute;
+    left: 13px;
+    top: 25px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.recurring-event-image {
+    width: 24px;
+}
+
+.event-name {
+    position: absolute;
+    left: 7px;
+    top: 172px;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 149px;
+    text-align: left;
+    font-size: 15px;
+}
+
+.track-name {
+    position: absolute;
+    left: 7px;
+    top: 192px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 149px;
+    text-align: left;
+    font-size: 12px;
+}
+
+.theme-bike-1 {
+    position: absolute;
+    left: 7px;
+    top: 92px;
+}
+
+.theme-bike-1-image
+{
+    width: 92px;
+}
+
+.divider-line {
+    position: absolute;
+    left: 7px;
+    top: 202px;
+}
+
+.divider-line-image
+{
+    width: 153px;
+}
+
+.difficulty-info {
+    position: absolute;
+    left: 7px;
+    top: 219px;
+}
+
+.difficulty1, .difficulty2, .difficulty3, .difficulty4, .difficulty5{
+    border-radius: 20px;
+    background: linear-gradient(90deg, lightgray 100%, lightgray);
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+}
+
+.start-in {
+    position: absolute;
+    left: 7px;
+    top: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    font-size: 12px;
+}
+
+.equalized {
+    position: absolute;
+    right: 9px;
+    top: 221px;
+    font-size: 12px;
+    width: 62px;
+    text-align: right;
+}
+.details {
+    position: absolute;
+    left: 5px;
+    top: 221px;
+    font-size: 12px;
+    width: 62px;
+    text-align: left;
+
+}
+.text-align{
+    text-align:center;
+    margin-top:-25px;
+}
+.Econtent{
+    margin-top:15px;
+    margin-left:100px;
+}
+.modal-title{
+    margin-top:20px;
+    margin-left:90px;
+}
+
+.modal-bg{
+    background-image: url("/web/client/cmn/etile-bg.jpg");
+    height: 500px;
+    width: 400px;
+}
+
+.buttonModal{
+    margin-top: -40px;
+    float: right;
+    margin-right: 10px;
+    background-color: #69BD45;
+}

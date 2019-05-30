@@ -1,0 +1,308 @@
+<div class="container">
+    <h2>Events Tabs</h2>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Past Events</a></li>
+        <li><a data-toggle="tab" href="#menu1">Current Events</a></li>
+        <li><a data-toggle="tab" href="#menu2">Scheduled Events</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="home" class="tab-pane fade in active">
+            <!--- Past events Start --->
+            <div class="card-div" *ngFor="let event of events">
+                <div >
+                    <div class="start-in">Start in</div>
+                    <img class=card-img *ngIf="event.tracks[0].title === 'Asphalt Velo'"  src="/web/client/cmn/Asphalt_Velo.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title === 'Saturn Circuit Complete'"  src="/web/client/cmn/Saturn_Circuit_Complete.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title ==  'Kayla\'s Mountain Track'" src="/web/client/cmn/Kayla's_Mountain_track.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title === 'Hazardous Velo'" src="/web/client/cmn/Kayla's_Mountain_track.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title === 'Hairpin'" src="/web/client/cmn/Hairpin.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title === 'Road High Desert'" src="/web/client/cmn/Road_High_Desert.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title === 'Fantastic Alien Sea'" src="/web/client/cmn/Frantastic_Alien_Sea.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title === 'Angle Test'" src="/web/client/cmn/Non-Descripted_Track_1.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title === 'Road High Desert 5k'" src="/web/client/cmn/Road_High_Desert_5K.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title === 'Mountain Bike Course by Jesper'" src="/web/client/cmn/Mountain_Bike_Course_by_Jesper.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title === 'Fantastic Dimensional Tech'" src="/web/client/cmn/Fantistic_Dimentional_Tech.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title === 'Echelon'" src="/web/client/cmn/Echelon.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title === 'Velocity Viexn'" src="/web/client/cmn/Vixen.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title ==  'Ammu M Dinkar\'s Home World'" src="/web/client/cmn/Vixen.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title === 'Wooden Velo'" src="/web/client/cmn/Vixen.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title === 'Fantastic Dimensionism Tech'" src="/web/client/cmn/Fantistic_Dimentional_Tech.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title == 'Summit Islands'" src="/web/client/cmn/Summit_Islands.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title == 'Summit Islands by Ben C'" src="/web/client/cmn/Summit_Islands.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title == 'Roman Arena and Pantheon'" src="/web/client/cmn/Roman_Arena_and_Pantheon.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title == 'Dust Bowl Crit'" src="/web/client/cmn/Dust_Bowl_Crit.png" >
+                    <img class=card-img *ngIf="event.tracks[0].title == 'Dimensionism Abstract Loop'" src="/web/client/cmn/Dimensionism_Abstract_Loop.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title == 'Sci-Fi Beams and Loops'" src="/web/client/cmn/Sci-Fi_Beams_and_Loops.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title == 'Sci-Fi R Loop'" src="/web/client/cmn/Sci-Fi_R_Loop.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title == 'Mountain Monument'" src="/web/client/cmn/Mountain_Monument.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title == 'Dimensionism Circuit 1'" src="/web/client/cmn/Dimensionism_Circuit_1.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title == 'Dimensionism Circuit 2 '" src="/web/client/cmn/Dimensionism_Circuit_2.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title == 'Wooden Velo New'" src="/web/client/cmn/Wooden_Velo.jpg" >
+                    <img class=card-img *ngIf="event.tracks[0].title == 'Scifi Beams and Loops'" src="/web/client/cmn/Sci-Fi_Beams_and_Loops.jpg" >
+                    <div *ngIf="event.minimumRiderBasedEvent" class="recurring-event">
+                        <img class="recurring-event-image" src="/web/client/cmn/Recurring_Event_Icon.png">
+                    </div>
+
+                    <div *ngIf="event.minimumRiderBasedEvent" class="player-count">Players {{(!!event.ridersCurrent ? event.ridersCurrent : '0')}}/{{event.ridersMinimum}}+</div>
+                    <div *ngIf="!event.minimumRiderBasedEvent && event.startTicksAsDate" class="start-time">{{event.eventIn}}</div>
+                    <div *ngIf="!event.minimumRiderBasedEvent && event.startTicksAsDate" class="player-count">{{(event.startTicksAsDate.getMonth() < 9 ? "0" + (event.startTicksAsDate.getMonth() + 1) : event.startTicksAsDate.getMonth() + 1) + '.' + (event.startTicksAsDate.getDate() < 10 ? "0" + event.startTicksAsDate.getDate() : event.startTicksAsDate.getDate()) + '.' + event.startTicksAsDate.getFullYear()}}</div>
+                    <div class="theme-bike-1">
+                        <img *ngIf="event.tracks[0].cvrcadeTheme === 'mountain'" class="theme-bike-1-image" src="/web/client/cmn/Mountain_Bike_Icon_[Large].png">
+                        <img *ngIf="event.tracks[0].cvrcadeTheme === 'road'" class="theme-bike-1-image" src="/web/client/cmn/Road_Bike_Icon_[Large].png">
+                        <img *ngIf="event.tracks[0].cvrcadeTheme === 'fantasy'" class="theme-bike-1-image" src="/web/client/cmn/Sci-Fi_Bike_Icon_[Large].png">
+                    </div>
+                    <div class="event-name">{{event.title}}</div>
+                    <div class="track-name">{{event.tracks[0].title}}</div>
+                    <div class="divider-line"><img class="divider-line-image" src="/web/client/cmn/Split_Line.jpg"></div>
+
+                    <div class="equalized">{{event.equalized ? 'Equalized' : 'Unequalized'}}</div>
+                    <div class="details" (click)="openmodal(
+                    event.title,
+                    event.tracks[0].title,
+                    event.creator.name,
+                    event.eventType,
+                    event.tracks[0].cvrcadeTheme,
+                    event.tracks[0].laps,
+                    event.tracks[0].trackLength,
+                    event.mods,
+                    event.equalized,
+                    event.ranked
+
+
+                    )"> Details</div>
+                </div>
+                <!-- Modal -->
+                <button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#pastModal">Open Modal</button>
+
+                <div class="modal fade" id="pastModal" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content" style="background-image: url(app/etile-bg.png); height: 500px; width: 400px;">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h3 style="color: white" class="modal-title">{{eventname}}</h3>
+                            </div>
+                            <div  class="modal-body" >
+                                <div class="text-align">
+                                    <div style="color: white" ><h3> {{trackTitle}}</h3></div>
+                                    <!--div style="color: black"  >Created By: {{creatorName}}</div-->
+                                </div>
+                                <div class="Econtent"> <h4 style="color: #69BD45">Difficulty</h4>
+                                    <div style="color: white" ><b>Climbing:</b> {{evtype}}</div>
+                                    <div style="color: white" ><b>Wind: </b>{{cvrcadeTheme}}</div>
+                                    <div style="color: white" > <b>Techincal : </b>{{laps}}</div>
+                                    <div style="color: white" ><b>Endurance : </b>{{trackLength}} Miles</div>
+
+                                </div>
+                                <div class="Econtent"> <h4  style="color: #69BD45">Configuration</h4>
+                                    <div style="color: white" ><b>Type Of Event:</b> {{evtype}}</div>
+                                    <div style="color: white" ><b>CVRCade Theme: </b>{{cvrcadeTheme}}</div>
+                                    <div style="color: white" > <b>Number of Laps : </b>{{laps}}</div>
+                                    <div style="color: white" ><b>Length : </b>{{trackLength}} Miles</div>
+                                    <div style="color: white" ><b>Mods :</b> {{mods}}</div>
+                                    <div style="color: white" ><b>Equalised:</b> {{equalized ? 'Yes' : 'No'}}</div>
+                                    <div style="color: white" ><b>Ranked:</b> {{ranked ? 'Yes' : 'No'}}</div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Modal -->
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+        <div id="menu1" class="tab-pane fade">
+            <div class="card-div" *ngFor="let cevent of currentEvents">
+                <div (click)="openCurrentModal()">
+                    <div class="start-in">Start in</div>
+                    <img class=card-img *ngIf="cevent.tracks[0].title === 'Asphalt Velo'"  src="/web/client/cmn/Asphalt_Velo.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title === 'Saturn Circuit Complete'"  src="/web/client/cmn/Saturn_Circuit_Complete.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title == 'Kayla\'s Mountain Track'" src="/web/client/cmn/Kayla's_Mountain_track.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title === 'Hazardous Velo'" src="/web/client/cmn/Kayla's_Mountain_track.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title === 'Hairpin'" src="/web/client/cmn/Hairpin.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title === 'Road High Desert'" src="/web/client/cmn/Road_High_Desert.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title === 'Fantastic Alien Sea'" src="/web/client/cmn/Frantastic_Alien_Sea.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title === 'Angle Test'" src="/web/client/cmn/Non-Descripted_Track_1.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title === 'Road High Desert 5k'" src="/web/client/cmn/Road_High_Desert_5K.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title === 'Mountain Bike Course by Jesper'" src="/web/client/cmn/Mountain_Bike_Course_by_Jesper.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title === 'Fantastic Dimensional Tech'" src="/web/client/cmn/Fantistic_Dimentional_Tech.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title === 'Echelon'" src="/web/client/cmn/Echelon.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title === 'Velocity Viexn'" src="/web/client/cmn/Vixen.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title == 'Ammu M Dinkar\'s Home World'" src="/web/client/cmn/Vixen.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title === 'Wooden Velo'" src="/web/client/cmn/Vixen.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title === 'Fantastic Dimensionism Tech'" src="/web/client/cmn/Fantistic_Dimentional_Tech.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title == 'Summit Islands'" src="/web/client/cmn/Summit_Islands.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title == 'Summit Islands by Ben C'" src="/web/client/cmn/Summit_Islands.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title == 'Roman Arena and Pantheon'" src="/web/client/cmn/Roman_Arena_and_Pantheon.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title == 'Dust Bowl Crit'" src="/web/client/cmn/Dust_Bowl_Crit.png" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title == 'Dimensionism Abstract Loop'" src="/web/client/cmn/Dimensionism_Abstract_Loop.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title == 'Sci-Fi Beams and Loops'" src="/web/client/cmn/Sci-Fi_Beams_and_Loops.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title == 'Sci-Fi R Loop'" src="/web/client/cmn/Sci-Fi_R_Loop.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title == 'Mountain Monument'" src="/web/client/cmn/Mountain_Monument.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title == 'Dimensionism Circuit 1 '" src="/web/client/cmn/Dimensionism_Circuit_1.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title == 'Dimensionism Circuit 2 '" src="/web/client/cmn/Dimensionism_Circuit_2.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title == 'Wooden Velo New'" src="/web/client/cmn/Wooden_Velo.jpg" >
+                    <img class=card-img *ngIf="cevent.tracks[0].title == 'Scifi Beams and Loops'" src="/web/client/cmn/Sci-Fi_Beams_and_Loops.jpg" >
+
+                    <div *ngIf="cevent.minimumRiderBasedEvent" class="recurring-event">
+                        <img class="recurring-event-image" src="/web/client/cmn/Recurring_Event_Icon.png">
+                    </div>
+
+                    <div *ngIf="cevent.minimumRiderBasedEvent" class="player-count">Players {{(!!cevent.ridersCurrent ? cevent.ridersCurrent : '0')}}/{{cevent.ridersMinimum}}+</div>
+                    <div *ngIf="!cevent.minimumRiderBasedEvent && cevent.startTicksAsDate" class="start-time">{{cevent.eventIn}}</div>
+                    <div *ngIf="!cevent.minimumRiderBasedEvent && cevent.startTicksAsDate" class="player-count">{{(cevent.startTicksAsDate.getMonth() < 9 ? "0" + (cevent.startTicksAsDate.getMonth() + 1) : cevent.startTicksAsDate.getMonth() + 1) + '.' + (cevent.startTicksAsDate.getDate() < 10 ? "0" + cevent.startTicksAsDate.getDate() : cevent.startTicksAsDate.getDate()) + '.' + cevent.startTicksAsDate.getFullYear()}}</div>
+
+                    <div class="theme-bike-1">
+                        <img *ngIf="cevent.tracks[0].cvrcadeTheme === 'mountain'" class="theme-bike-1-image" src="/web/client/cmn/Mountain_Bike_Icon_[Large].png">
+                        <img *ngIf="cevent.tracks[0].cvrcadeTheme === 'road'" class="theme-bike-1-image" src="/web/client/cmn/Road_Bike_Icon_[Large].png">
+                        <img *ngIf="cevent.tracks[0].cvrcadeTheme === 'fantasy'" class="theme-bike-1-image" src="/web/client/cmn/Sci-Fi_Bike_Icon_[Large].png">
+                    </div>
+
+                    <div class="event-name">{{cevent.title}}</div>
+                    <div class="track-name">{{cevent.tracks[0].title}}</div>
+                    <div class="divider-line"><img class="divider-line-image" src="/web/client/cmn/Split_Line.jpg"></div>
+                    <div class="equalized">{{cevent.equalized ? 'Equalized' : 'Unequalized'}}</div>
+
+                    <!-- Modal -->
+                    <button id="openCurrentModalButton" [hidden]="true" data-toggle="modal" data-target="#currentModal">Open Modal</button>
+
+                    <div class="modal fade" id="currentModal" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 style="color: black" class="modal-title">{{cevent.title}}</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div style="color: black" >Name of the Track: {{cevent.tracks[0].title}}</div>
+                                    <div style="color: black"  >Created By: {{cevent.creator.name}}</div>
+                                    <div style="color: black" >Type Of Event: {{cevent.eventType}}</div>
+                                    <div style="color: black" >CVRCade Theme: {{cevent.tracks[0].cvrcadeTheme}}</div>
+                                    <div style="color: black" > Number ofLaps : {{cevent.tracks[0].laps}}</div>
+                                    <div style="color: black" >Length : {{cevent.tracks[0].trackLength}} Miles</div>
+                                    <div style="color: black" >Mods : {{cevent.mods}}</div>
+                                    <div style="color: black" >Equalised: {{cevent.equalized ? 'Yes' : 'No'}}</div>
+                                    <div style="color: black" >Ranked: {{cevent.ranked ? 'Yes' : 'No'}}</div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                </div>
+            </div>
+        </div>
+
+        <div id="menu2" class="tab-pane fade">
+
+            <div class="card-div" *ngFor="let fevent of futureEvents">
+                <div (click)="openFutureModal()">
+                    <div class="start-in">Start in</div>
+                    <img class=card-img *ngIf="fevent.tracks[0].title === 'Asphalt Velo'"  src="/web/client/cmn/Asphalt_Velo.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title === 'Saturn Circuit Complete'"  src="/web/client/cmn/Saturn_Circuit_Complete.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title == 'Kayla\'s Mountain Track'" src="/web/client/cmn/Kayla's_Mountain_track.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title === 'Hazardous Velo'" src="/web/client/cmn/Kayla's_Mountain_track.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title === 'Hairpin'" src="/web/client/cmn/Hairpin.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title === 'Road High Desert'" src="/web/client/cmn/Road_High_Desert.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title === 'Fantastic Alien Sea'" src="/web/client/cmn/Frantastic_Alien_Sea.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title === 'Angle Test'" src="/web/client/cmn/Non-Descripted_Track_1.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title === 'Road High Desert 5k'" src="/web/client/cmn/Road_High_Desert_5K.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title === 'Mountain Bike Course by Jesper'" src="/web/client/cmn/Mountain_Bike_Course_by_Jesper.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title === 'Fantastic Dimensional Tech'" src="/web/client/cmn/Fantistic_Dimentional_Tech.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title === 'Echelon'" src="/web/client/cmn/Echelon.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title === 'Velocity Viexn'" src="/web/client/cmn/Vixen.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title == 'Ammu M Dinkar\'s Home World'" src="/web/client/cmn/Vixen.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title === 'Wooden Velo'" src="/web/client/cmn/Vixen.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title === 'Fantastic Dimensionism Tech'" src="/web/client/cmn/Fantistic_Dimentional_Tech.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title == 'Summit Islands'" src="/web/client/cmn/Summit_Islands.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title == 'Summit Islands by Ben C'" src="/web/client/cmn/Summit_Islands.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title == 'Roman Arena and Pantheon'" src="/web/client/cmn/Roman_Arena_and_Pantheon.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title == 'Dust Bowl Crit'" src="/web/client/cmn/Dust_Bowl_Crit.png" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title == 'Dimensionism Abstract Loop'" src="/web/client/cmn/Dimensionism_Abstract_Loop.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title == 'Sci-Fi Beams and Loops'" src="/web/client/cmn/Sci-Fi_Beams_and_Loops.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title == 'Sci-Fi R Loop'" src="/web/client/cmn/Sci-Fi_R_Loop.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title == 'Mountain Monument'" src="/web/client/cmn/Mountain_Monument.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title == 'Dimensionism Circuit 1 '" src="/web/client/cmn/Dimensionism_Circuit_1.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title == 'Dimensionism Circuit 2 '" src="/web/client/cmn/Dimensionism_Circuit_2.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title == 'Wooden Velo New'" src="/web/client/cmn/Wooden_Velo.jpg" >
+                    <img class=card-img *ngIf="fevent.tracks[0].title == 'Scifi Beams and Loops'" src="/web/client/cmn/Sci-Fi_Beams_and_Loops.jpg" >
+
+
+
+                    <div *ngIf="fevent.minimumRiderBasedEvent" class="recurring-event">
+                        <img class="recurring-event-image" src="/web/client/cmn/Recurring_Event_Icon.png">
+                    </div>
+
+                    <div *ngIf="fevent.minimumRiderBasedEvent" class="player-count">Players {{(!!fevent.ridersCurrent ? fevent.ridersCurrent : '0')}}/{{fevent.ridersMinimum}}+</div>
+                    <div *ngIf="!fevent.minimumRiderBasedEvent && fevent.startTicksAsDate" class="start-time">{{fevent.eventIn}}</div>
+                    <div *ngIf="!fevent.minimumRiderBasedEvent && fevent.startTicksAsDate" class="player-count">{{(fevent.startTicksAsDate.getMonth() < 9 ? "0" + (fevent.startTicksAsDate.getMonth() + 1) : fevent.startTicksAsDate.getMonth() + 1) + '.' + (fevent.startTicksAsDate.getDate() < 10 ? "0" + fevent.startTicksAsDate.getDate() : fevent.startTicksAsDate.getDate()) + '.' + fevent.startTicksAsDate.getFullYear()}}</div>
+
+                    <div class="theme-bike-1">
+                        <img *ngIf="fevent.tracks[0].cvrcadeTheme === 'mountain'" class="theme-bike-1-image" src="/web/client/cmn/Mountain_Bike_Icon_[Large].png">
+                        <img *ngIf="fevent.tracks[0].cvrcadeTheme === 'road'" class="theme-bike-1-image" src="/web/client/cmn/Road_Bike_Icon_[Large].png">
+                        <img *ngIf="fevent.tracks[0].cvrcadeTheme === 'fantasy'" class="theme-bike-1-image" src="/web/client/cmn/Sci-Fi_Bike_Icon_[Large].png">
+                    </div>
+
+                    <div class="event-name">{{fevent.title}}</div>
+                    <div class="track-name">{{fevent.tracks[0].title}}</div>
+                    <div class="divider-line"><img class="divider-line-image" src="/web/client/cmn/Split_Line.jpg"></div>
+                    <div class="equalized">{{fevent.equalized ? 'Equalized' : 'Unequalized'}}</div>
+
+                    <!-- Modal -->
+                    <button id="openFutureModalButton" [hidden]="true" data-toggle="modal" data-target="#futureModal">Open Modal</button>
+
+                    <div class="modal fade" id="futureModal" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 style="color: black" class="modal-title">{{fevent.title}}</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div style="color: black" >Name of the Track: {{fevent.tracks[0].title}}</div>
+                                    <div style="color: black"  >Created By: {{fevent.creator.name}}</div>
+                                    <div style="color: black" >Type Of Event: {{fevent.eventType}}</div>
+                                    <div style="color: black" >CVRCade Theme: {{fevent.tracks[0].cvrcadeTheme}}</div>
+                                    <div style="color: black" > Number ofLaps : {{fevent.tracks[0].laps}}</div>
+                                    <div style="color: black" >Length : {{fevent.tracks[0].trackLength}} Miles</div>
+                                    <div style="color: black" >Mods : {{fevent.mods}}</div>
+                                    <div style="color: black" >Equalised: {{fevent.equalized ? 'Yes' : 'No'}}</div>
+                                    <div style="color: black" >Ranked: {{fevent.ranked ? 'Yes' : 'No'}}</div>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

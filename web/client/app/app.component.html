@@ -1,0 +1,109 @@
+<div class="container">
+<div class="card-div" *ngFor="let event of events">
+    <div >
+        <div class="start-in">Start in</div>
+        <img class=card-img *ngIf="event.tracks[0].title === 'Asphalt Velo'"  src="/web/client/cmn/Asphalt_Velo.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title === 'Saturn Circuit Complete'"  src="/web/client/cmn/Saturn_Circuit_Complete.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title ==  'Kayla\'s Mountain Track'" src="/web/client/cmn/Kayla's_Mountain_track.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title === 'Hazardous Velo'" src="/web/client/cmn/Kayla's_Mountain_track.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title === 'Hairpin'" src="/web/client/cmn/Hairpin.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title === 'Road High Desert'" src="/web/client/cmn/Road_High_Desert.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title === 'Fantastic Alien Sea'" src="/web/client/cmn/Frantastic_Alien_Sea.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title === 'Angle Test'" src="/web/client/cmn/Non-Descripted_Track_1.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title === 'Road High Desert 5k'" src="/web/client/cmn/Road_High_Desert_5K.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title === 'Mountain Bike Course by Jesper'" src="/web/client/cmn/Mountain_Bike_Course_by_Jesper.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title === 'Fantastic Dimensional Tech'" src="/web/client/cmn/Fantistic_Dimentional_Tech.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title === 'Echelon'" src="/web/client/cmn/Echelon.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title === 'Velocity Viexn'" src="/web/client/cmn/Vixen.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title ==  'Ammu M Dinkar\'s Home World'" src="/web/client/cmn/Vixen.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title === 'Wooden Velo'" src="/web/client/cmn/Vixen.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title === 'Fantastic Dimensionism Tech'" src="/web/client/cmn/Fantistic_Dimentional_Tech.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title == 'Summit Islands'" src="/web/client/cmn/Summit_Islands.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title == 'Summit Islands by Ben C'" src="/web/client/cmn/Summit_Islands.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title == 'Roman Arena and Pantheon'" src="/web/client/cmn/Roman_Arena_and_Pantheon.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title == 'Dust Bowl Crit'" src="/web/client/cmn/Dust_Bowl_Crit.png" >
+        <img class=card-img *ngIf="event.tracks[0].title == 'Dimensionism Abstract Loop'" src="/web/client/cmn/Dimensionism_Abstract_Loop.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title == 'Sci-Fi Beams and Loops'" src="/web/client/cmn/Sci-Fi_Beams_and_Loops.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title == 'Sci-Fi R Loop'" src="/web/client/cmn/Sci-Fi_R_Loop.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title == 'Mountain Monument'" src="/web/client/cmn/Mountain_Monument.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title == 'Dimensionism Circuit 1'" src="/web/client/cmn/Dimensionism_Circuit_1.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title == 'Dimensionism Circuit 2 '" src="/web/client/cmn/Dimensionism_Circuit_2.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title == 'Wooden Velo New'" src="/web/client/cmn/Wooden_Velo.jpg" >
+        <img class=card-img *ngIf="event.tracks[0].title == 'Scifi Beams and Loops'" src="/web/client/cmn/Sci-Fi_Beams_and_Loops.jpg" >
+        <div *ngIf="event.minimumRiderBasedEvent" class="recurring-event">
+            <img class="recurring-event-image" src="/web/client/cmn/Recurring_Event_Icon.png">
+        </div>
+
+        <div *ngIf="event.minimumRiderBasedEvent" class="player-count">Players {{(!!event.ridersCurrent ? event.ridersCurrent : '0')}}/{{event.ridersMinimum}}+</div>
+        <div *ngIf="!event.minimumRiderBasedEvent && event.startTicksAsDate" class="start-time">{{event.eventIn}}</div>
+        <div *ngIf="!event.minimumRiderBasedEvent && event.startTicksAsDate" class="player-count">{{(event.startTicksAsDate.getMonth() < 9 ? "0" + (event.startTicksAsDate.getMonth() + 1) : event.startTicksAsDate.getMonth() + 1) + '.' + (event.startTicksAsDate.getDate() < 10 ? "0" + event.startTicksAsDate.getDate() : event.startTicksAsDate.getDate()) + '.' + event.startTicksAsDate.getFullYear()}}</div>
+        <div class="theme-bike-1">
+            <img *ngIf="event.tracks[0].cvrcadeTheme === 'mountain'" class="theme-bike-1-image" src="/web/client/cmn/Mountain_Bike_Icon_[Large].png">
+            <img *ngIf="event.tracks[0].cvrcadeTheme === 'road'" class="theme-bike-1-image" src="/web/client/cmn/Road_Bike_Icon_[Large].png">
+            <img *ngIf="event.tracks[0].cvrcadeTheme === 'fantasy'" class="theme-bike-1-image" src="/web/client/cmn/Sci-Fi_Bike_Icon_[Large].png">
+        </div>
+        <div class="event-name">{{event.title}}</div>
+        <div class="track-name">{{event.tracks[0].title}}</div>
+        <div class="divider-line"><img class="divider-line-image" src="/web/client/cmn/Split_Line.jpg"></div>
+
+        <div class="equalized">{{event.equalized ? 'Equalized' : 'Unequalized'}}</div>
+        <div class="details" (click)="openmodal(
+                    event.title,
+                    event.tracks[0].title,
+                    event.creator.name,
+                    event.eventType,
+                    event.tracks[0].cvrcadeTheme,
+                    event.tracks[0].laps,
+                    event.tracks[0].trackLength,
+                    event.mods,
+                    event.equalized,
+                    event.ranked
+
+
+                    )"> Details</div>
+    </div>
+    <!-- Modal -->
+    <button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#pastModal">Open Modal</button>
+
+    <div class="modal fade" id="pastModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content modal-bg">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 style="color: white" class="modal-title">{{eventname}}</h3>
+                </div>
+                <div  class="modal-body" >
+                    <div class="text-align">
+                        <div style="color: white" ><h3> {{trackTitle}}</h3></div>
+                        <!--div style="color: black"  >Created By: {{creatorName}}</div-->
+                    </div>
+                    <div class="Econtent"> <h4 style="color: #69BD45">Difficulty</h4>
+                        <div style="color: white" ><b>Climbing:</b> {{evtype}}</div>
+                        <div style="color: white" ><b>Wind: </b>{{cvrcadeTheme}}</div>
+                        <div style="color: white" > <b>Techincal : </b>{{laps}}</div>
+                        <div style="color: white" ><b>Endurance : </b>{{trackLength}} Miles</div>
+
+                    </div>
+                    <div class="Econtent"> <h4  style="color: #69BD45">Configuration</h4>
+                        <div style="color: white" ><b>Type Of Event:</b> {{evtype}}</div>
+                        <div style="color: white" ><b>CVRCade Theme: </b>{{cvrcadeTheme}}</div>
+                        <div style="color: white" > <b>Number of Laps : </b>{{laps}}</div>
+                        <div style="color: white" ><b>Length : </b>{{trackLength}} Miles</div>
+                        <div style="color: white" ><b>Mods :</b> {{mods}}</div>
+                        <div style="color: white" ><b>Equalised:</b> {{equalized ? 'Yes' : 'No'}}</div>
+                        <div style="color: white" ><b>Ranked:</b> {{ranked ? 'Yes' : 'No'}}</div>
+                        <button type="button" class="btn btn-default buttonModal" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <!--    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>-->
+            </div>
+
+        </div>
+    </div>
+    <!-- Modal -->
+</div>
+</div>
