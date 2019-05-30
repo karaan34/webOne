@@ -142,22 +142,29 @@
     margin-top:-25px;
 }
 .Econtent{
-    margin-top:15px;
-    margin-left:100px;
+    /*margin-top:15px;
+    margin-left:100px;*/
 }
 .modal-title{
-    margin-top:20px;
-    margin-left:90px;
+   /* margin-top:20px;
+    margin-left:90px;*/
 }
 
 .modal-bg{
-    background-image: url("/web/client/cmn/etile-bg.jpg");
-    height: 500px;
-    width: 400px;
+  /*
+  //  background-image: url("/web/client/cmn/etile-bg.jpg");
+  */
+    background-color: black;
+    opacity: 0.7;
+    height: 450px;
+    width: 450px;
+    /*
+    background: no-repeat;
+    */
 }
 
 .buttonModal{
-    margin-top: -40px;
+
     float: right;
     margin-right: 10px;
     background-color: #69BD45;

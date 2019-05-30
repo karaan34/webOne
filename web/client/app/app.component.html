@@ -57,7 +57,8 @@
                     event.tracks[0].trackLength,
                     event.mods,
                     event.equalized,
-                    event.ranked
+                    event.ranked,
+                    event.weather.weather
 
 
                     )"> Details</div>
@@ -71,7 +72,7 @@
             <!-- Modal content-->
             <div class="modal-content modal-bg">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" style="color: darkred" class="close" data-dismiss="modal">&times;</button>
                     <h3 style="color: white" class="modal-title">{{eventname}}</h3>
                 </div>
                 <div  class="modal-body" >
@@ -79,13 +80,7 @@
                         <div style="color: white" ><h3> {{trackTitle}}</h3></div>
                         <!--div style="color: black"  >Created By: {{creatorName}}</div-->
                     </div>
-                    <div class="Econtent"> <h4 style="color: #69BD45">Difficulty</h4>
-                        <div style="color: white" ><b>Climbing:</b> {{evtype}}</div>
-                        <div style="color: white" ><b>Wind: </b>{{cvrcadeTheme}}</div>
-                        <div style="color: white" > <b>Techincal : </b>{{laps}}</div>
-                        <div style="color: white" ><b>Endurance : </b>{{trackLength}} Miles</div>
 
-                    </div>
                     <div class="Econtent"> <h4  style="color: #69BD45">Configuration</h4>
                         <div style="color: white" ><b>Type Of Event:</b> {{evtype}}</div>
                         <div style="color: white" ><b>CVRCade Theme: </b>{{cvrcadeTheme}}</div>
@@ -94,12 +89,12 @@
                         <div style="color: white" ><b>Mods :</b> {{mods}}</div>
                         <div style="color: white" ><b>Equalised:</b> {{equalized ? 'Yes' : 'No'}}</div>
                         <div style="color: white" ><b>Ranked:</b> {{ranked ? 'Yes' : 'No'}}</div>
-                        <button type="button" class="btn btn-default buttonModal" data-dismiss="modal">Close</button>
+                        <div style="color: white" ><b>Weather:</b> {{weather}}</div>
+
                     </div>
                 </div>
                 <div class="modal-footer">
-                <!--    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>-->
+                    <button type="button" class="btn btn-default buttonModal" data-dismiss="modal">Close</button>
             </div>
 
         </div>

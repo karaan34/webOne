@@ -79,10 +79,11 @@ export class AppComponent {
     mods:number;
     equalized: boolean;
     ranked:boolean;
+    weather:string;
 
 
 
-    openmodal(eventName:string, title:string,creator:string,ev:string,theme:string,lap:number,tracklength:number,mod:number,eq:boolean,rank:boolean) {
+    openmodal(eventName:string, title:string,creator:string,ev:string,theme:string,lap:number,tracklength:number,mod:number,eq:boolean,rank:boolean,wet:string) {
         this.eventname = eventName;
         this.trackTitle = title;
         this.creatorName = creator;
@@ -93,6 +94,7 @@ export class AppComponent {
         this.mods= mod;
         this.equalized =eq;
         this.ranked =rank;
+        this.weather =wet;
 
 
          console.log(event);

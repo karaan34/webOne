@@ -54,7 +54,7 @@ var AppComponent = /** @class */ (function () {
                 this.startDate = new Date();
             });*/
     };
-    AppComponent.prototype.openmodal = function (eventName, title, creator, ev, theme, lap, tracklength, mod, eq, rank) {
+    AppComponent.prototype.openmodal = function (eventName, title, creator, ev, theme, lap, tracklength, mod, eq, rank, wet) {
         this.eventname = eventName;
         this.trackTitle = title;
         this.creatorName = creator;
@@ -65,6 +65,7 @@ var AppComponent = /** @class */ (function () {
         this.mods = mod;
         this.equalized = eq;
         this.ranked = rank;
+        this.weather = wet;
         console.log(event);
         this.element = document.getElementById('openModalButton');
         this.element.click();
