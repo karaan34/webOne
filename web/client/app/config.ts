@@ -119,6 +119,7 @@ if (cycligent.config.production) {
         "/web/client/lib/bootstrap-datepicker.min.js",
         "/web/client/lib/bootstrap-clockpicker.min.js",
         "/web/client/node_modules/chart.js/dist/Chart.min.js"
+
     ];
 } else {
     cycligent.config.loader.libs = [
@@ -132,5 +133,6 @@ if (cycligent.config.production) {
         "/web/client/lib/bootstrap-datepicker.min.js",
         "/web/client/lib/bootstrap-clockpicker.min.js",
         "/web/client/node_modules/chart.js/dist/Chart.min.js"
+
     ];
 }

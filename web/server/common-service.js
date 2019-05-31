@@ -12,7 +12,7 @@ module.exports = {
             // console.log (regEx);
             var query = {};
             var newDate = new Date();
-            eventsCol.find({ "versionType": "prod" }).sort({ _id: -1 }).limit(20)
+            eventsCol.find({ "versionType": "prod" }).sort({ _id: -1 }).limit(15)
                 .toArray()
                 .then(function (events) {
                 state.target.status = "success";

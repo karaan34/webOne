@@ -26,7 +26,7 @@ export = {
             } ;
             let newDate = new Date();
 
-            eventsCol.find({"versionType": "prod" }).sort({_id: -1}).limit(20)
+            eventsCol.find({"versionType": "prod" }).sort({_id: -1}).limit(15)
                 .toArray()
                 .then((events: any[]) => {
                     state.target.status = "success";

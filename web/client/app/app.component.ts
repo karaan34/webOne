@@ -2,6 +2,7 @@ import {Component,ViewChild,ElementRef} from "@angular/core";
 import {WebApi} from "./web-api";
 import {EventCreationEvent} from "../data/common-int";
 
+
 @Component({
     selector: "appBase",
    // providers: [WebApi],
@@ -24,7 +25,7 @@ export class AppComponent {
 
     constructor(
         private cyclecadeApi: WebApi,
-        private  trackApi: WebApi
+        private  trackApi: WebApi,
     ) {
         this.eventsGet();
 
@@ -42,6 +43,7 @@ export class AppComponent {
                     console.log(value.startTicksAsDate);
                 });
                 this.startDate = new Date();
+
             });
 
         /*this.cyclecadeApi.futureEvents({})

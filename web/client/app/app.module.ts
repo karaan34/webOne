@@ -6,10 +6,11 @@ import {APP_BASE_HREF} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {WebApi} from "./web-api";
 
+
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [AppComponent, PipeSearch, PipeActive, PipeOrderBy],
-    imports: [BrowserModule, FormsModule],
+    imports: [BrowserModule, FormsModule ],
     providers: [{provide: APP_BASE_HREF, useValue: "/web/client"},WebApi]
 })
 
