@@ -1,5 +1,20 @@
 <div class="container">
 <div class="card-div" *ngFor="let event of events">
+    <div  (click)="openmodal(
+                    event.title,
+                    event.tracks[0].title,
+                    event.creator.name,
+                    event.eventType,
+                    event.tracks[0].cvrcadeTheme,
+                    event.tracks[0].laps,
+                    event.tracks[0].trackLength,
+                    event.mods,
+                    event.equalized,
+                    event.ranked,
+                    event.weather.weather
+
+
+                    )">
     <div >
         <div class="start-in">Start in</div>
         <img class=card-img *ngIf="event.tracks[0].title === 'Asphalt Velo'"  src="/web/client/cmn/Asphalt_Velo.jpg" >
@@ -47,21 +62,7 @@
         <div class="divider-line"><img class="divider-line-image" src="/web/client/cmn/Split_Line.jpg"></div>
 
         <div class="equalized">{{event.equalized ? 'Equalized' : 'Unequalized'}}</div>
-        <div class="details" (click)="openmodal(
-                    event.title,
-                    event.tracks[0].title,
-                    event.creator.name,
-                    event.eventType,
-                    event.tracks[0].cvrcadeTheme,
-                    event.tracks[0].laps,
-                    event.tracks[0].trackLength,
-                    event.mods,
-                    event.equalized,
-                    event.ranked,
-                    event.weather.weather
-
-
-                    )"> Details</div>
+        </div>
     </div>
     <!-- Modal -->
     <button id="openModalButton" [hidden]="true" data-toggle="modal" data-target="#pastModal">Open Modal</button>
@@ -101,4 +102,4 @@
     </div>
     <!-- Modal -->
 </div>
-</div>
+</div> </div>
